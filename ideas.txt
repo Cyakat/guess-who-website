@@ -1,0 +1,9 @@
+Voting Concept: People either vote to choose person or vote for question (after a certain number of faces remain)
+
+Face generation and tagging: have big list of keywords also used for tags. Generate faces based off of some random keywords 
+from the list and save k the image along with the words used as tags. Use stable diffusion (maybe) to generate faces
+
+Layout: Funny Scrolling, large amount of images that will require Scrolling down to see all of them.
+Have a fixed bar at the bottom allowing the user to vote on questions or choose a person to guess 
+
+Cookies: use a cookie to identify joe over repeated sessions
