@@ -78,19 +78,6 @@ body {
   height: 0px;
 }
 
-.empty-vote{
-  z-index: 1;
-    position: relative;
-    font-size: inherit;
-    font-family: inherit;
-    color: white;
-    padding: 0.5em 1em;
-    outline: none;
-    border: none;
-    background-color: hsl(0, 0%, 27%);
-    margin-bottom: 50px;
-}
-
 .vote, #hudDropup{
     z-index: 1;
     position: relative;
