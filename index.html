@@ -28,16 +28,20 @@
                     <td>
                         <!-- Default dropup button -->
                         <div class="btn-group dropup hud-dropup">
-                            <button type="button" class="btn btn-secondary dropdown-toggle questions-button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button type="button" id="hudDropup" class="btn btn-secondary dropdown-toggle questions-button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Select Question
                             </button>
-                            <ul class="dropdown-menu questions-list">
-                            <!-- Dropdown menu links -->
-                    
-                            </ul>
+                            <!--This gets added via JS-->
+
+                            <!-- <ul class="dropdown-menu questions-list">
+                            <!-- Dropdown menu links
+                            </ul> -->
                         </div>
                     </td>
                     <td class="hud-column" id="middleColumn">
+                        <div class="image-disabled">
+                            
+                        </div>
                         <!--Image Selection Display-->
                         <div class="image-display">
                             <div class="faceSelect">
@@ -48,9 +52,7 @@
                     </td>
                     <td id="vote-button" class="hud-column">
                         <!--Vote Button-->
-                        <button class="vote">
-                            shidding rn
-                        </button>
+                        <p style="padding: 0.5em 1em; margin-bottom: 50px;">Choose an Option Before Voting</p>
                     </td>
                 </tr>
             </table>

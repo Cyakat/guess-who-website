@@ -10,7 +10,6 @@ body {
     border-style: solid;
     border-radius: 5px;
     border-color:#b63ab6;
-    
     border-width: 2px;
     transform-origin: center;
     transition: 0.25s
@@ -70,6 +69,7 @@ body {
 }
 
 #middleColumn{
+
 }
 
 .hud-head{
@@ -78,7 +78,20 @@ body {
   height: 0px;
 }
 
-.vote, .change-vote{
+.empty-vote{
+  z-index: 1;
+    position: relative;
+    font-size: inherit;
+    font-family: inherit;
+    color: white;
+    padding: 0.5em 1em;
+    outline: none;
+    border: none;
+    background-color: hsl(0, 0%, 27%);
+    margin-bottom: 50px;
+}
+
+.vote, #hudDropup{
     z-index: 1;
     position: relative;
     font-size: inherit;
@@ -93,7 +106,7 @@ body {
     /* margin-left: 80%; */
   }
   
-  .vote::before {
+  .vote::before, .change-vote::before, #hudDropup::before{
     content: '';
     z-index: -1;
     position: absolute;
@@ -107,11 +120,11 @@ body {
     transition: transform 0.25s ease-in-out;
   }
   
-  .vote:hover {
+  .vote:hover, .change-vote:hover, #hudDropup:hover{
     cursor: pointer;
   }
   
-  .vote:hover::before {
+  .vote:hover::before, .change-vote:hover::before, #hudDropup:hover:before {
     transform-origin: center top;
     transform: scaleY(1);
   }
@@ -130,31 +143,12 @@ body {
 
     /* margin-left: 80%; */
   }
-  
-  .change-vote::before {
-    content: '';
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: hsl(236, 32%, 26%);
-    transform-origin: center bottom;
-    transform: scaleY(0);
-    transition: transform 0.25s ease-in-out;
-  }
-  
-  .change-vote:hover {
-    cursor: pointer;
-  }
-  
-  .change-vote:hover::before {
-    transform-origin: center top;
-    transform: scaleY(1);
-  }
 
-  .hud-dropup{
+  #hudDropup{
     margin-bottom: 50px;
+    border-radius: 0%;
   }
   
+  /* #hudDropup:active{
+    background-color: #b63ab6;
+  } */

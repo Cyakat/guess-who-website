@@ -38,6 +38,11 @@ function questionSelect(questionText){
 function vote(questionText) {
     console.log(questionText)
     console.log(questionText.endsWith("black?"));
+    if(questionText === "Choose a Face") {
+        console.log(`face chosen`);
+        voted();
+        return;
+    }
     for(i=0; i < questionsList.length; i++) {
         console.log(keywords[i])
         if(questionText.endsWith(keywords[i] + "?")) {
@@ -46,20 +51,27 @@ function vote(questionText) {
         }
     }
 
-    $("#vote-button").html("<button class=\"change-vote\" onclick=\"changeVote()\">change vote</button>");
-    $(".hud-dropup").html("<button type=\"button\" class=\"btn btn-secondary dropdown-toggle questions-button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\" disabled>Vote submited</button>");
-
+    voted();
 
 }
 
 function changeVote(){
-    $("#vote-button").html("<button class=\"vote\">shidding rn</button>");
-    $(".hud-dropup").html("<button type=\"button\" class=\"btn btn-secondary dropdown-toggle questions-button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">Select Question <ul class=\"dropdown-menu questions-list\"></ul></button>");
+    $("#vote-button").html("<p style=\"padding: 0.5em 1em; margin-bottom: 50px;\">Choose an Option Before Voting</p>");
+    $(".hud-dropup").html("<button type=\"button\" id=\"hudDropup\" class=\"btn btn-secondary dropdown-toggle questions-button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">Select Question <ul class=\"dropdown-menu questions-list\"></ul></button>");
     dropup(questionsList);
+    console.log(questionsList);
 }
 
 function dropup(questionsList){
+    $(".hud-dropup").append("<ul class=\"dropdown-menu questions-list\"><!-- Dropdown menu links --></ul>");
     for(i=0; i < questionsList.length; i++) {
         $(".questions-list").append("<li class=\"dropdown-item\" onclick=\"questionSelect('" + questionsList[i] + "')\">" + questionsList[i] + "</li>\n")
     }
+    $(".questions-list").append("<div class=\"dropdown-divider\"></div>");
+    $(".questions-list").append("<li class=\"dropdown-item\" onclick=\"questionSelect('Choose a Face')\">Choose a Face</li>\n");
+}
+
+function voted(){
+    $("#vote-button").html("<button class=\"change-vote\" onclick=\"changeVote()\">Change Vote</button>");
+    $(".hud-dropup").html("<button type=\"button\" id=\"hudDropup\" class=\"btn btn-secondary dropdown-toggle questions-button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\" disabled>Vote Submited</button>");
 }
